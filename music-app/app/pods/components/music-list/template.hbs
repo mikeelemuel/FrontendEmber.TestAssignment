@@ -1,0 +1,17 @@
+<h1>List of Albums</h1>
+
+Search for album: {{input type="type" value=filter}}
+<table>
+  <thead>
+    <th>Album {{fa-icon "sort" click=(action "sortAlbums" "albumName")}}</th>
+    <th>Released Date {{fa-icon "sort" click=(action "sortAlbums" "releasedAt")}}</th>
+    <th>Sales {{fa-icon "sort" click=(action "sortAlbums" "sales")}}</th>
+    <th colspan="3">Songs</th>
+  </thead>
+
+  {{#each filtered as |album|}}
+    <tbody>
+      <MusicListItem  @album={{album}}/>
+    </tbody>
+  {{/each}}
+</table>

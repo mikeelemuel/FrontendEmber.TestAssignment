@@ -3,9 +3,13 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'music-app',
+    podModulePrefix: 'music-app/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',
+    fontawesome: {
+      defaultPrefix: 'fal' // light icons
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

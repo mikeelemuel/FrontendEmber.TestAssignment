@@ -1,0 +1,11 @@
+{{#if isEditing}}
+  <form {{action "save" on="submit"}}>
+    <div class="form-group">
+      {{yield this}}
+    </div>
+  </form>
+{{else}}
+  <div role="button" class="value" {{action "activate"}}>
+    {{value}}
+  </div>
+{{/if}}

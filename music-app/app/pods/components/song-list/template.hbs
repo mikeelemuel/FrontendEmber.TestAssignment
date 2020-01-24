@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <th>Song name {{fa-icon "sort" click=(action "sortAlbums" "songName")}}</th>
+    <th colspan="2">Created date {{fa-icon "sort" click=(action "sortAlbums" "createdAt")}}</th>
+  </thead>
+
+  {{#each model.album.songs as |song|}}
+    <tbody>
+      <td>
+        {{#inline-edit save=(action "saveSong" song) value=song.songName}}
+          {{input value=song.songName placeholder="Song name"}}
+        {{/inline-edit}}
+      </td>
+      <td>{{moment song.createdAt "MM-DD-YYYY"}}</td>
+      <td> <button class="red" type="button" name="button" onclick={{action "delete" song}}> Delete </button> </td>
+    </tbody>
+  {{/each}}
+</table>

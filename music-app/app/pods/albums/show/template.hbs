@@ -1,0 +1,35 @@
+<div class="albums-show">
+  <div class="container">
+    <h1>Songs of {{model.album.albumName}} album</h1>
+
+    {{!-- <PowerSelectMultiple
+      @searchEnabled={{true}}
+      @options={{model.genres}}
+      @selected={{genreName}}
+      @placeholder="Select some names..."
+      @onChange={{action (mut genreName)}} as |genre|>
+      {{genre.genreName}}
+    </PowerSelectMultiple> --}}
+
+    {{!-- <PowerSelect @selected={{genreName}} @options={{model.genres}} @onChange={{action (mut genreName)}} as |genre|>
+      {{genre.genreName}}
+    </PowerSelect>
+
+    <PowerSelect @selected={{artistName}} @options={{model.artists}} @onChange={{action (mut artistName)}} as |artist|>
+      {{artist.artistName}}
+    </PowerSelect> --}}
+
+    <div class="album-details">
+      <h4>Album details:</h4>
+      <p>{{model.album.albumDetails}}</p>
+    </div>
+
+    Song name: {{input type="type" value=songName }}
+    <button type="button" name="button" onclick={{action "addComment"}}> Add song</button>
+    {{#if isShowError}}
+      <span>{{error}}</span>
+    {{/if}}
+
+    <SongList  @model={{this.model}}/>
+  </div>
+</div>
